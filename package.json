@@ -1,0 +1,21 @@
+{
+  "name": "statemanager",
+  "version": "1.0.0",
+  "description": "a lightweight JavaScript library that provides a simple and efficient way to manage state",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "state",
+    "state",
+    "manager",
+    "state",
+    "library",
+    "persist",
+    "state",
+    "persist"
+  ],
+  "author": "RodneyEcheru",
+  "license": "ISC"
+}
