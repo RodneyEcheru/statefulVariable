@@ -25,7 +25,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.nodejs.core.library.configured.version": "19.3.0",
     "javascript.nodejs.core.library.typings.version": "20.2.3",
@@ -48,7 +48,7 @@
       <updated>1684726807045</updated>
       <workItem from="1684726815172" duration="753000" />
       <workItem from="1684727714769" duration="5000" />
-      <workItem from="1684727777092" duration="7766000" />
+      <workItem from="1684727777092" duration="9213000" />
     </task>
     <servers />
   </component>
