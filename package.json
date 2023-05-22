@@ -6,16 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodneyEcheru/statefulVariable.git"
+  },
   "keywords": [
     "state",
-    "state",
+    "stateful",
     "manager",
-    "state",
-    "library",
     "persist",
-    "state",
-    "persist"
+    "persisted",
+    "reactive"
   ],
   "author": "RodneyEcheru",
-  "license": "ISC"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RodneyEcheru/statefulVariable/issues"
+  },
+  "homepage": "https://github.com/RodneyEcheru/statefulVariable#readme"
 }
