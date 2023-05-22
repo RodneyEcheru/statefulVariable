@@ -1,6 +1,9 @@
 # statefulVariable
 
-The statefulVariable Library is a lightweight JavaScript library that provides a simple and efficient way to create and persist data across page refreshes as well as being reactive for use cases such as a shopping cart similar to what state managers do in other libraries and frameworks.
+The statefulVariable Library is a lightweight JavaScript library that provides a simple and efficient way to create and persist data across page refreshes as well as being reactive for use cases such as a shopping cart similar to what state managers do in other libraries and frameworks. 
+
+### inspiration
+This library was inspired by svelte but with persistence added and freedom to use across other different frameworks as well as when not using any javascript framework or library 
 
 ## Installation
 
