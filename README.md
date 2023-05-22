@@ -14,6 +14,40 @@ npm install easystatemanager
 
 ## Basic Usage
 
+### example 1
+
+```shell
+const myStatefulVariable = statefulVariable("initial value");
+
+// get the current value
+console.log(myStatefulVariable.value); // "initial value"
+
+// set the value
+myStatefulVariable.set("new value");
+
+// get the new value
+console.log(myStatefulVariable.value); // "new value"
+
+```
+### Example 1.2
+```shell
+// create the writable store with an initial value of an empty array
+const cart = createWritable("cart", []);
+
+// subscribe to the store and log the value whenever it changes
+cart.subscribe((value) => {
+  console.log(value);
+});
+
+// add an item to the cart
+cart.update((value) => [...value, "item 1"]);
+
+// add another item to the cart
+cart.update((value) => [...value, "item 2"]);
+
+```
+
+### example 2
 ```shell
 // Import the statefulVariable library
 const statefulVariable = require('easystatemanager');
