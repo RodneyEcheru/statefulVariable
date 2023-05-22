@@ -1,9 +1,9 @@
 # statefulVariable
 
-The statefulVariable Library is a lightweight JavaScript library that provides a simple and efficient way to create and persist data across page refreshes as well as being reactive for use cases such as a shopping cart similar to what state managers do in other libraries and frameworks. 
+### description
+A simple and efficient way to manage state
 
-### inspiration
-This library was inspired by svelte but with persistence added and freedom to use across other different frameworks as well as when not using any javascript framework or library 
+The statefulVariable Library is lightweight and provides a simple and efficient way to create and persist data across page refreshes as well as being reactive for use cases such as a shopping cart similar to what state managers do in other libraries and frameworks. 
 
 ## Installation
 
@@ -30,14 +30,13 @@ myStatefulVariable.set("new value");
 
 // get the new value
 console.log(myStatefulVariable.value); // "new value"
-
 ```
-### Example 1.2
+### Example 2
 ```shell
-// create the writable store with an initial value of an empty array
-const cart = createWritable("cart", []);
+// create the stateful variable with an initial value of an empty array
+const cart = statefulVariable("cart", []);
 
-// subscribe to the store and log the value whenever it changes
+// subscribe to the variable and log the value whenever it changes
 cart.subscribe((value) => {
   console.log(value);
 });
@@ -47,10 +46,9 @@ cart.update((value) => [...value, "item 1"]);
 
 // add another item to the cart
 cart.update((value) => [...value, "item 2"]);
-
 ```
 
-### example 2
+### example 3
 ```shell
 // Import the statefulVariable library
 const statefulVariable = require('easystatemanager');
@@ -73,7 +71,7 @@ console.log('Current cart value:', cart.value);
 unsubscribe();
 ```
 
-## Shopping Cart Example Usage
+## Basic Shopping Cart Example
 
 ```shell
 // Import the statefulVariable library
@@ -117,6 +115,9 @@ console.log('Current cart value:', cart.value);
 // Unsubscribe from further changes
 unsubscribe();
 ```
+
+### inspiration
+This library was inspired by svelte but with persistence added and freedom to use across other different frameworks as well as when not using any javascript framework or library
 
 ## license
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
