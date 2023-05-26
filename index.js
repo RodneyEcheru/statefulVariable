@@ -42,13 +42,6 @@ const statefulVariable = (key, initialValue) => {
         set,
         update,
         subscribe,
-        reactive: {
-            subscribe: (callback) => {
-                return this.subscribe((value) => {
-                    callback(value);
-                });
-            }
-        }
     };
 };
 
