@@ -21,7 +21,7 @@ npm install easystatemanager
 
 ```shell
 // Import the statefulVariable library
-const statefulVariable = require('easystatemanager');
+import statefulVariable from "easystatemanager";
 
 // store initial value in a variable
 const myStatefulVariable = statefulVariable("initial value");
@@ -38,7 +38,7 @@ console.log(myStatefulVariable.value); // "new value"
 ### Example 2
 ```shell
 // Import the statefulVariable library
-const statefulVariable = require('easystatemanager');
+import statefulVariable from "easystatemanager";
 
 // create the stateful variable with an initial value of an empty array
 const myarray = statefulVariable("myarray", []);
@@ -58,7 +58,7 @@ myarray.update((value) => [...value, "item 2"]);
 ### example 3
 ```shell
 // Import the statefulVariable library
-const statefulVariable = require('easystatemanager');
+import statefulVariable from "easystatemanager";
 
 // Create a stateful variable with an initial value
 const cart = statefulVariable('cart', []);
@@ -82,7 +82,7 @@ unsubscribe();
 
 ```shell
 // Import the statefulVariable library
-const statefulVariable = require('easystatemanager');
+import statefulVariable from "easystatemanager";
 
 // Create a stateful variable for the shopping cart
 const cart = statefulVariable('cart', []);

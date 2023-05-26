@@ -46,4 +46,4 @@ function statefulVariable(key, initialValue) {
     };
 }
 
-module.exports = statefulVariable;
+export default statefulVariable;
