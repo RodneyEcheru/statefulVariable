@@ -1,6 +1,5 @@
 
-function statefulVariable(key, initialValue) {
-
+const statefulVariable = (key, initialValue) => {
     let value = initialValue;
     let subscribers = [];
 
@@ -44,6 +43,6 @@ function statefulVariable(key, initialValue) {
         update,
         subscribe,
     };
-}
+};
 
 module.exports = statefulVariable;
