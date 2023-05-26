@@ -1,6 +1,6 @@
 {
   "name": "easystatemanager",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a lightweight JavaScript library that provides a simple and efficient way to manage state",
   "main": "index.js",
   "scripts": {
