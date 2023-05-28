@@ -1,49 +1,56 @@
 
-const statefulVariable = (key, initialValue) => {
-    let value = initialValue;
-    let subscribers = [];
+const statefulVariable = (storeKey, initialValue) => {
+    let subscriptions = [];
+    let storeValue;
 
-    // try to get the value from localStorage if it exists
-    if (typeof window !== "undefined") {
-        const storedValue = localStorage.getItem(key);
-        if (storedValue !== null) {
-            value = JSON.parse(storedValue);
+    let isLocalStorageAccessible = false;
+
+    try {
+        localStorage.setItem('__test__', '__test__');
+        localStorage.removeItem('__test__');
+        isLocalStorageAccessible = true;
+    } catch (e) {
+        // Local storage is not accessible
+    }
+
+    if (isLocalStorageAccessible) {
+        let currentStoreString = localStorage.getItem(storeKey);
+        if (currentStoreString === null || currentStoreString === undefined) {
+            storeValue = initialValue;
+            localStorage.setItem(storeKey, JSON.stringify(storeValue));
+        } else {
+            storeValue = JSON.parse(currentStoreString);
         }
+    } else {
+        storeValue = initialValue;
     }
 
-    function set(newValue) {
-        value = newValue;
-        subscribers.forEach((callback) => callback(value));
-
-        // persist the new value to localStorage
-        if (typeof window !== "undefined") {
-            localStorage.setItem(key, JSON.stringify(newValue));
-        }
-    }
-
-    function update(callback) {
-        set(callback(value));
-    }
-
-    function subscribe(callback) {
-        subscribers.push(callback);
-
-        // return an unsubscribe function
+    const subscribe = (subscription) => {
+        subscription(storeValue);
+        subscriptions = [...subscriptions, subscription];
         return () => {
-            subscribers = subscribers.filter((subscriber) => subscriber !== callback);
+            subscriptions = subscriptions.filter(s => s !== subscription);
         };
-    }
-
-    // add a value property to access the current value of the writable store
-    return {
-        get value() {
-            return value;
-        },
-        set,
-        update,
-        subscribe,
     };
 
+    const set = (value) => {
+        storeValue = value;
+        if (isLocalStorageAccessible) {
+            localStorage.setItem(storeKey, JSON.stringify(value));
+        }
+        subscriptions.forEach(subscription => subscription(storeValue));
+    };
+
+    const update = (update_func) => set(update_func(storeValue));
+
+    return {
+        subscribe,
+        set,
+        update,
+        get value() {
+            return storeValue;
+        }
+    };
 };
 
 module.exports = statefulVariable;
