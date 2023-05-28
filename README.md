@@ -3,7 +3,11 @@
 ### description
 A simple and efficient way to manage state
 
-The statefulVariable Library is lightweight and provides a simple and efficient way to create and persist data across page refreshes as well as being reactive for use cases such as a shopping cart and user states similar to what state managers do in other libraries and frameworks. 
+The statefulVariable Library is lightweight and provides a simple and efficient way to create and persist data across page refreshes
+
+currently working on making it reactive to show updates in real time 
+
+this can be used for use cases such as a shopping cart and user states similar to what state managers do in other libraries and frameworks. 
 
 ## Installation
 
