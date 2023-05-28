@@ -5,7 +5,7 @@ A simple and efficient way to manage state
 
 The statefulVariable Library is lightweight and provides a simple and efficient way to create and persist data across page refreshes
 
-currently working on making it reactive to show updates in real time 
+it's reactive in svelte when using the $ symbol and currently working on making it reactive to show updates in real time in plain javascript as well
 
 this can be used for use cases such as a shopping cart and user states similar to what state managers do in other libraries and frameworks. 
 
@@ -38,6 +38,9 @@ myStatefulVariable.set("new value");
 
 // get the new value
 console.log(myStatefulVariable.value); // "new value"
+
+// if using svelte, this will log all changes in real time without writing multiple console.log statements
+$: console.log($myStatefulVariable);
 ```
 ### Example 2
 ```shell
@@ -77,6 +80,9 @@ cart.set(['item1', 'item2', 'item3']);
 
 // Access the current value of the cart
 console.log('Current cart value:', cart.value);
+
+// if using svelte, this will log whenever the cart updates
+$: console.log($cart);
 
 // Unsubscribe from further changes
 unsubscribe();
@@ -122,6 +128,9 @@ removeItem('item2');
 
 // Access the current value of the cart
 console.log('Current cart value:', cart.value);
+
+// if using svelte, this will log whenever the cart updates
+$: console.log($cart);
 
 // Unsubscribe from further changes
 unsubscribe();
