@@ -43,6 +43,7 @@ const statefulVariable = (key, initialValue) => {
         update,
         subscribe,
     };
+
 };
 
 module.exports = statefulVariable;
